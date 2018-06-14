@@ -8,6 +8,8 @@ apiRoutes.use(bodyParser.json());
 
 const {users} = require (global.controllers)
 
+apiRoutes.get('/users', users.getAll)
+
 // garder les routes RESTful
 // un endpoint pour chaque controller :
 // /users, /owners, /reviews

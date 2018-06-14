@@ -1,4 +1,4 @@
-const {Model} = require('./Model')
+const { Model } = require('./Model')
 
 class Users extends Model {
   constructor () {
@@ -6,7 +6,7 @@ class Users extends Model {
   }
 
   // customMethod () {
-    
+
   // }
 }
 

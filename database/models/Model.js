@@ -19,3 +19,5 @@ class Model {
 
   // toutes les methodes de CRUD general
 }
+
+module.exports = {Model}
