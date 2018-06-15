@@ -2,7 +2,7 @@ const {Router} = require('express')
 const express = require('express')
 
 
-const api = require('./api')
+const api = require(global.api)
 
 const routes = new Router()
 

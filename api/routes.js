@@ -1,14 +1,29 @@
 const {Router} = require('express')
+
 const bodyParser = require('body-parser')
 
+const {
+  users,
+  auth
+} = require(global.controllers)
+
+const authMiddleware = require('./middleware/auth')
+
+// Initiate 
 const routes = new Router()
 
 routes.use(bodyParser.urlencoded({extended: false}));
 routes.use(bodyParser.json());
 
-const {users} = require (global.controllers)
-
 routes.get('/users', users.getAll)
+routes.post('/auth/register', authMiddleware.hashCredentials, auth.register)
+routes.post('/auth/login', auth.login)
+
+routes.get('/restricted', authMiddleware.verifyToken, users.restrictedMethod)
+
+// routes.post('/auth/login', auth.login)
+
+// routes.get('/restricted', authMiddleware.verifyToken, controller)
 
 // garder les routes RESTful
 // un endpoint pour chaque controller :
