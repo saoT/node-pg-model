@@ -16,7 +16,6 @@ class Model {
     // }
     return connection.run(`SELECT * from ${this.table} WHERE id=${id}`)
   }
-
   // toutes les methodes de CRUD general
 }
 

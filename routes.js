@@ -6,7 +6,7 @@ const api = require('./api')
 
 const routes = new Router()
 
-routes.use('/api',api)
+routes.use('/api', api.routes)
 
 // fallback sur le front
 routes.use(express.static('./public'));
